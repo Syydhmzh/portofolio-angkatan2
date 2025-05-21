@@ -59,10 +59,9 @@ if (empty($_SESSION['email'])) {
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="keluar.php">keluar</a>
+                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    
-                                    </a>
+                                <a class="nav-link" href="#"> </a>
                             </li>
                         </ul>
                     </div>

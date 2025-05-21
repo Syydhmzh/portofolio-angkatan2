@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,6 +50,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="user.php">User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="keluar.php">keluar</a>
                             </li>
                         </ul>
                     </div>
