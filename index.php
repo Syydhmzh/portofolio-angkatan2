@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include 'config/koneksi.php';
 
@@ -15,12 +15,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $row = mysqli_fetch_assoc($query);
         $_SESSION['NAME'] = $row['name'];
         $_SESSION['ID_USER'] = $row['id'];
-        header("location:dashboard.php");
+        header("location: dashboard.php");
     } else {
         header("location:index.php?login=erorr");
     }
-
-
 }
 
 ?>
@@ -55,8 +53,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                                 <form action="" method="post">
                                     <div class="mb-3">
                                         <label for="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email"
-                                            placeholder="Ex: admin@gmail.com">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Masukan Email Anda">
                                     </div>
                                     <div class="mb-3">
                                         <label for="form-label">Password</label>
