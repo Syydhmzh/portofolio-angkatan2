@@ -1,4 +1,13 @@
+<?php 
+session_start();
+$_nama = isset($_SESSION['NAME']) ? $_SESSION['NAME'] : '';
+if (!$_nama) {
+    header("Location: index.php?access=failed");
+}
 
+include 'config/koneksi.php';
+
+?>
 
 
 <!DOCTYPE html>
@@ -17,17 +26,27 @@
 
 <body>
     <div class="wrapper">
-    <?php include 'inc/header.php'; ?>
+        <?php include 'inc/header.php'; ?>
         <div class="content mt-5">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-header">
-                                dashboard
+                                <?php echo isset($_GET['page']) ? str_replace("-", " ", ucfirst($_GET['page'])):'home' ?>
                             </div>
                             <div class="card-body">
+                                <?php if (isset($_GET['page'])) {
+                                    if (file_exists("content/" . $_GET['page'] . ".php")) {
+                                        include "content/" . $_GET['page'] . ".php";
+                                    
+                                    } else {
+                                        include "content/home.php";
+                                    }
+                                }
 
+
+                                ?>
                             </div>
                         </div>
                     </div>

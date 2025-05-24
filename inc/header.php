@@ -1,9 +1,5 @@
 <?php
-session_start();
-$_nama = isset($_SESSION['NAME']) ? $_SESSION['NAME'] : '';
-if (!$_nama) {
-    header("Location: index.php?access=failed");
-}
+
 
 ?>
 
@@ -28,7 +24,7 @@ if (!$_nama) {
                             Page
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="?page=about">About</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -36,15 +32,35 @@ if (!$_nama) {
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="user.php">User</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=user">User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=manage-profile">Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=manage-skill">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=manage-experience">Experience</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=manage-contact">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="?page=manage-galery">Galleries</a>
+                        </li>
+
+
+
 
                 </ul>
                 <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <?php echo $_nama; ?>
+                        <?php echo $_nama ; ?>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="php/keluar.php">Keluar</a></li>

@@ -31,6 +31,7 @@ $rowedit = mysqli_fetch_assoc($queryedit);
 if (isset($_POST['edit'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
+
     $password = sha1($_POST['password']);
 
     //masukan data ke dalam table user
@@ -78,7 +79,7 @@ if (isset($_POST['edit'])) {
                                             <label for="">Nama *</label>
                                         </div>
                                         <div class="col-sm-10">
-                                            <input required type="text" class="form-control" id="nama" name="name" placeholder="Masukan Nama Anda" value="<?= $rowedit['name'] ?>">
+                                            <input required type="text" class="form-control" id="nama" name="name" placeholder="Masukan Nama Anda" value="<?= isset($_GET['edit']) ? $rowedit['name'] : "" ?>">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -86,7 +87,7 @@ if (isset($_POST['edit'])) {
                                             <label for="">Email *</label>
                                         </div>
                                         <div class="col-sm-10">
-                                            <input required type="email" class="form-control" id="email" name="email" placeholder="Masukan Email Anda" value="<?= $rowedit['email'] ?>">
+                                            <input required type="email" class="form-control" id="email" name="email" placeholder="Masukan Email Anda" value="<?= isset($_GET['edit']) ? $rowedit['email'] : "" ?>">
                                         </div>
                                     </div>
                                     <div class="mb-3 row">
@@ -98,7 +99,7 @@ if (isset($_POST['edit'])) {
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
-                                        <button type="submit" class="btn btn-primary" name="<?= isset($_GET['edit']) ? 'edit' : 'simpan'; ?>"> Simpan</button>
+                                        <button type="submit" class="btn btn-primary" name="<?= isset($_GET['edit']) ? 'edit' : 'simpan'; ?>"> <?= $header ?></button>
                                     </div>
                                 </form>
                             </div>
